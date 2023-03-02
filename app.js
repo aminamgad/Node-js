@@ -191,7 +191,10 @@ const homePage = readFileSync('./index.html')
 const path = require('path')
 
 const express = require("express");
+const morgan = require('morgan')
 const app = express();
+
+app.use(morgan('tiny'))
 
 const logger = (req,res,next)=>{
    const method = req.method
